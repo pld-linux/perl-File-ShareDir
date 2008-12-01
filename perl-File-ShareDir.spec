@@ -8,13 +8,13 @@
 %define	pnam	ShareDir
 Summary:	File::ShareDir - Locate per-dist and per-module shared files
 Name:		perl-File-ShareDir
-Version:	0.05
+Version:	1.00
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/File/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	f15b8ee973bc304732e41f89e7d5b71a
+# Source0-md5:	28f47081e7d678410bc5e0881b286a8b
 URL:		http://search.cpan.org/dist/File-ShareDir/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -63,8 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-rm $RPM_BUILD_ROOT%{perl_vendorlib}/auto/File/ShareDir/sample.txt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
