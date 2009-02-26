@@ -9,7 +9,7 @@
 Summary:	File::ShareDir - Locate per-dist and per-module shared files
 Name:		perl-File-ShareDir
 Version:	1.00
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -60,6 +60,7 @@ needlessly.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{perl_vendorlib}/auto/share/dist
 
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -71,4 +72,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README
 %{perl_vendorlib}/File/*.pm
+%{perl_vendorlib}/auto/share
 %{_mandir}/man3/*
