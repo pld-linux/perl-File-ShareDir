@@ -1,15 +1,15 @@
 #
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define	pdir	File
 %define	pnam	ShareDir
+%include	/usr/lib/rpm/macros.perl
 Summary:	File::ShareDir - Locate per-dist and per-module shared files
 Summary(pl.UTF-8):	File::ShareDir - położenie plików współdzielonych w dystrybucji i module
 Name:		perl-File-ShareDir
 Version:	1.104
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -85,7 +85,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes
 %{perl_vendorlib}/File/ShareDir.pm
-%dir %{perl_vendorlib}/auto/share
-%dir %{perl_vendorlib}/auto/share/dist
 %dir %{perl_vendorlib}/auto/share/module
 %{_mandir}/man3/File::ShareDir.3pm*
