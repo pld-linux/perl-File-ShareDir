@@ -8,19 +8,23 @@
 Summary:	File::ShareDir - Locate per-dist and per-module shared files
 Summary(pl.UTF-8):	File::ShareDir - położenie plików współdzielonych w dystrybucji i module
 Name:		perl-File-ShareDir
-Version:	1.104
-Release:	2
+Version:	1.116
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/File/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	e921ec8d0a373690b5da9e03a548c223
-URL:		http://search.cpan.org/dist/File-ShareDir/
-BuildRequires:	perl-devel >= 1:5.8.0
+# Source0-md5:	f2a0eee9f04c93753dd56437175e5bda
+URL:		https://metacpan.org/release/File-ShareDir
+BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
+BuildRequires:	perl(File::Path) >= 2.08
+BuildRequires:	perl(File::Spec) >= 0.80
 BuildRequires:	perl-Class-Inspector >= 1.12
+BuildRequires:	perl-File-ShareDir-Install >= 0.13
 BuildRequires:	perl-Params-Util >= 0.07
+BuildRequires:	perl-Test-Simple >= 0.90
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -73,17 +77,18 @@ dane były dostępne dla kodu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{perl_vendorlib}/auto/share/{dist,module}
 
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/auto/share/{dist/File-ShareDir/{sample.txt,subdir/sample.txt},module/File-ShareDir/test_file.txt}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes
+%doc Changes README.md
 %{perl_vendorlib}/File/ShareDir.pm
 %dir %{perl_vendorlib}/auto/share/module
 %{_mandir}/man3/File::ShareDir.3pm*
