@@ -4,7 +4,6 @@
 
 %define	pdir	File
 %define	pnam	ShareDir
-%include	/usr/lib/rpm/macros.perl
 Summary:	File::ShareDir - Locate per-dist and per-module shared files
 Summary(pl.UTF-8):	File::ShareDir - położenie plików współdzielonych w dystrybucji i module
 Name:		perl-File-ShareDir
