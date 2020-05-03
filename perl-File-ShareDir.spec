@@ -17,6 +17,7 @@ Source0:	http://www.cpan.org/modules/by-module/File/%{pdir}-%{pnam}-%{version}.t
 URL:		https://metacpan.org/release/File-ShareDir
 BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl(File::Path) >= 2.08
 BuildRequires:	perl(File::Spec) >= 0.80
