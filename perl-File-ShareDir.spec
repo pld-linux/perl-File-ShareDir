@@ -7,13 +7,13 @@
 Summary:	File::ShareDir - Locate per-dist and per-module shared files
 Summary(pl.UTF-8):	File::ShareDir - położenie plików współdzielonych w dystrybucji i module
 Name:		perl-File-ShareDir
-Version:	1.116
+Version:	1.118
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/File/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	f2a0eee9f04c93753dd56437175e5bda
+# Source0-md5:	0084f730f4e3d4d89703d92b3ea82f54
 URL:		https://metacpan.org/release/File-ShareDir
 BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.1-13
